@@ -1,0 +1,11 @@
+- name: myapp
+  type:
+  source:
+    root: myapp
+  hooks:
+    build: |
+      composer install
+  mounts:
+    'tmp':
+    source: tmp
+    source_path: files/tmp

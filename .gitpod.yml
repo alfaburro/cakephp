@@ -1,0 +1,20 @@
+# https://www.gitpod.io/docs/config-gitpod-file
+
+image: gitpod/workspace-full
+
+ports:
+  - port: 3000
+    onOpen: notify
+
+tasks:
+  - name: install platform.sh CLI
+    command: curl -fsSL https://raw.githubusercontent.com/platformsh/cli/main/installer.sh | bash
+  - name: install composer
+    command: curl -s https://getcomposer.org/installer | php
+  - name: install the CakePHP application skeleton
+    command: |
+      if [ -d myapp ]; then
+        echo "Found myapp in workspace"
+      else
+        php composer.phar create-project --prefer-dist cakephp/app:5.* myapp
+      fi
