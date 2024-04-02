@@ -7,5 +7,5 @@
       composer install
   mounts:
     'tmp':
-    source: tmp
-    source_path: files/tmp
+      source: tmp
+      source_path: files/tmp
