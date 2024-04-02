@@ -14,3 +14,6 @@
     'tmp':
       source: tmp
       source_path: files/tmp
+    'logs':
+      source: tmp
+      source_path: files/logs
